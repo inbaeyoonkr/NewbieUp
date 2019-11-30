@@ -29,7 +29,7 @@
             <div class="overlay"></div>
           </div>
         </div>
-        <div class="page page-right">
+        <div class="page page-right scroll">
           <div class="page-inner">
             <section>
               <h2>백엔드 개발이란 ?</h2>
@@ -56,7 +56,7 @@
             </section>
           </div>
         </div>
-        <div class="page page-left">
+        <div class="page page-left scroll">
           <div class="page-inner">
             <section>
               <h2>프론트엔드 개발이란?</h2>

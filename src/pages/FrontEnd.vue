@@ -1,26 +1,29 @@
 <template>
   <div class="wrapper">
-    <div class="title">프론트엔드 로드맵</div>
+    <div class="title">
+      <span>프론트엔드</span><br>
+      <span>Front-End Developer</span>
+    </div>
     <div class="balls">
       <router-link to="/">
         <div>👨‍💻</div>
       </router-link>
     </div>
-    <div class="lode_map">
-      <mindmap :nodes="nodes" :connections="connections" :editable="false" />
+    <div class="load_map">
+      <mindmap :nodes="nodes" :connections="connections" :editable="false" style="height:100%"/>
     </div>
     <!--메뉴-->
     <transition name="slide">
       <div v-if="isShowMenu" id="nav" class="nav">
         <button @click="isShowMenu = false" class="close_btn"></button>
         <div class="nav_content">
-          <h1>{{nodeData.title}}란...</h1>
+          <h1>{{nodeData.title}} 란?</h1>
           <p>{{nodeData.explanation}}</p>
-          <div>
+          <div style="margin-top: 24px">
             <h2>책 추천</h2>
             <div v-for="book in nodeData.book" :key="book.index">
-              <div>{{book.title}}</div>
               <img v-bind:src="book.link" />
+              <div style="margin-top: 14px; margin-bottom: 14px">{{book.title}}</div>
             </div>
           </div>
           <div>
@@ -99,9 +102,10 @@ export default {
 
 <style scoped>
 .wrapper {
+  position: absolute;
   background: #48a3da;
   width: 100%;
-  height: 820px;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -124,16 +128,10 @@ export default {
   text-decoration: none;
   color: black;
 }
-.title {
-  font-size: 36px;
-  font-weight: bold;
-  letter-spacing: 0.5rem;
-  width: 100%;
-  text-align: center;
-  margin-top: 2rem;
-}
 .balls {
-  margin-left: 4rem;
+  position: absolute;
+  top: 36px;
+  left: 28px;
   width: 50px;
   display: flex;
   flex-flow: row nowrap;
@@ -180,7 +178,7 @@ export default {
 }
 .slide-enter-to {
   overflow: hidden;
-  max-width: 300px;
+  max-width: 400px;
 }
 .slide-enter {
   overflow: hidden;
@@ -248,8 +246,53 @@ export default {
   background: #000000;
   z-index: 1000;
   opacity: 0.8;
+  padding: 24px;
 }
 .nav_content {
-  margin-top: 100px;
+  margin-top: 70px;
 }
+.title{
+  text-align: center;
+  margin-top: 24px;
+}
+.title span:first-child{
+  font-weight: 300;
+  font-size: 2em;
+  font-family: 'NanumSquare', sans-serif;
+  text-align: center;
+}
+.title span:last-child{
+  position: relative;
+  margin-top: 0.5em;
+  padding: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  font-family: 'NanumSquare', sans-serif;
+}
+  .load_map{
+    background-color: rgb(52, 73, 94);
+    margin-top: 24px;
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  h1{
+    font-family: "NanumSquareRound", sans-serif;
+    font-size: 24px;
+  }
+
+  h2{
+    font-family: "NanumSquareRound", sans-serif;
+    font-size: 18px;
+  }
+
+  .nav p {
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 14px;
+  }
 </style>

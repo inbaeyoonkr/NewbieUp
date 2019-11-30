@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <router-link to="/" class="home">홈</router-link>
     <div>
       <mindmap :nodes="nodes" :connections="connections" :editable="false" />
@@ -41,4 +41,7 @@ export default {
   top: 30px;
   left: 100px;
 }
+  .wrapper{
+    background-color: #fff;
+  }
 </style>
