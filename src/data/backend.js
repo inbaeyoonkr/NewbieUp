@@ -14,15 +14,15 @@ const data = {
       target: "Python"
     },
     {
-      source: "백 엔드",
+      source: "백엔드",
       target: "Ruby and Rails"
     },
     {
-      source: "백 엔드",
+      source: "백엔드",
       target: "웹 서버"
     },
     {
-      source: "백 엔드",
+      source: "백엔드",
       target: "Spring"
     },
     {
