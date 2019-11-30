@@ -1,12 +1,12 @@
 const data = {
   nodes: [
     { text: "프론트 엔드" },
-    { text: "테스트", url: "#" },
-    { text: "Vue", url: "#" },
-    { text: "React", url: "#" },
-    { text: "Bootstrap", url: "#" },
-    { text: "Angular", url: "#" },
-    { text: "기본", url: "#" }
+    { text: "테스트" },
+    { text: "Vue", url: "/#/roadmap?type=vue" },
+    { text: "React", url: "/#/roadmap?type=react" },
+    { text: "Bootstrap" },
+    { text: "Angular" },
+    { text: "기본" }
   ],
   connections: [
     {
