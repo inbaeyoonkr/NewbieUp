@@ -8,7 +8,7 @@
       </div>
       <div class="logo">뉴비업</div>
       <div class="lode_map">
-        
+        <button @click="isShowMenu = true" class="close_btn"></button>
        <mindmap :nodes="nodes" :connections="connections" :editable="false" />
       </div>
       <!--메뉴-->
@@ -26,26 +26,6 @@
         </div>
       </transition>
     </div>
-
-    <!--메뉴-->
-    <transition name="slide">
-      <div v-if="isShowMenu" id="nav" class="nav">
-        <button @click="isShowMenu = false" class="close_btn"></button>
-        <div class="nav_content">
-          자바스크립트란?
-          <p>
-            자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.
-            <br />이 언어는 웹 브라우저 내에서 주로 사용하며,
-            <br />다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.
-          </p>
-          <div>책 추천</div>
-          <div>코딩 컨벤션</div>
-          <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
-          <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵 보기</button>
-        </div>
-      </div>
-    </transition>
-  </div>
 </template>
 
 <script>
@@ -53,44 +33,23 @@
     const { nodes, connections } = data;
 
     export default {
-      name: "FrontEnd",
-      data() {
-          return {
-            nodes,
-            connections,
-            isShowMenu: false,
-          }
-      },
-      methods: {
-        clickNode: function(){
-          this.isShowMenu = true;
+        name: "FrontEnd",
+        data() {
+            return {
+                nodes,
+                connections,
+                isShowMenu: false,
+            }
         },
-        goLoadMapPage: function(){
-          this.$router.push('/vue');
+        methods: {
+            clickNode: function () {
+                this.isShowMenu = true;
+            },
+            goLoadMapPage: function () {
+                this.$router.push('/vue');
+            }
         }
-      }
-
-    document.head.appendChild(component);
-
-    let modernizr = document.createElement("script");
-    modernizr.setAttribute("src", "/static/js/modernizr.custom.js");
-
-    document.head.appendChild(modernizr);
-  },
-  data() {
-    return {
-      isShowMenu: false
     };
-  },
-  methods: {
-    clickNode: function() {
-      this.isShowMenu = true;
-    },
-    goLoadMapPage: function() {
-      this.$router.push("/vue");
-    }
-  }
-};
 </script>
 
 <style scoped>
