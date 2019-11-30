@@ -30,84 +30,98 @@ const data = {
         { "text": "jQuery(선택)" },
       ]
     },
-    { "text": "범용 개발 스킬" },
-    // { "text": "Git" },
-    // { "text": "HTTP / HTTPS" },
-    // { "text": "문제 해결을 위한 검색 방법 배우기" },
-    // { "text": "터미널 사용법" },
-    // { "text": "데이터 구조, 알고리즘" },
-    // { "text": "디자인 패턴" },
-    // { "text": "리액트" },
-    // { "text": "빌드 도구" },
-    // { "text": "패키지 매니저" },
-    // { "text": "npm" },
-    // { "text": "yarn" },
-    // { "text": "pnpm" },
-    // { "text": "태스크 러너" },
-    // { "text": "npm 스크립트" },
-    // { "text": "gulp" },
-    // { "text": "스타일링" },
-    // { "text": "CSS 전처리" },
-    // { "text": "Sass / SCSS" },
-    // { "text": "PostCSS" },
-    // { "text": "Less" },
-    // { "text": "Stylus" },
-    // { "text": "CSS 프레임워크" },
-    // { "text": "Bootstrap" },
-    // { "text": "Materialize, Material UI, Material Design UI" },
-    // { "text": "Bulma" },
-    // { "text": "Semantic UI" },
-    // { "text": "Tailwind" },
-    // { "text": "상태 관리" },
-    // { "text": "Component State/Context" },
-    // { "text": "MobX" },
-    // { "text": "Redux" },
-    // { "text": "API 클라이언트" },
-    // { "text": "REST" },
-    // { "text": "fetch (네이티브)" },
-    // { "text": "SuperAgent" },
-    // { "text": "axios" },
-    // { "text": "GraphQL" },
-    // { "text": "Apollo" },
-    // { "text": "Relay" },
-    // { "text": "urql" },
-    // { "text": "데스크탑 앱 만들기" },
-    // { "text": "Proton Native" },
-    // { "text": "Electron" },
-    // { "text": "React Native Window" },
-    // { "text": "빌드 도구" },
-    // { "text": "Webpack" },
-    // { "text": "Styling" },
-    // { "text": "CSS in JS" },
-    // { "text": "Single File Components" },
-    // { "text": "State Management" },
-    // { "text": "Vuex" },
-    // { "text": "Vuex-loading" },
-    // { "text": "Vuex-shared-mutations" },
-    // { "text": "Data 영속화" },
-    // { "text": "vuex-persist" },
-    // { "text": "vuex-persistedstate" },
-    // { "text": "타입 검사기" },
-    // { "text": "Prop Types" },
-    // { "text": "TypeScript" },
-    // { "text": "Routing" },
-    // { "text": "vue-router" },
-    // { "text": "유틸리티 라이브러리" },
-    // { "text": "Lodash" },
-    // { "text": "Moment" },
-    // { "text": "테스트" },
-    // { "text": "Jest" },
-    // { "text": "Vue Test Utils" },
-    // { "text": "Karma" },
-    // { "text": "E2E 테스트" },
-    // { "text": "Selenium" },
-    // { "text": "Cypress" },
-    // { "text": "Puppeteer" },
-    // { "text": "Cucumber.js" },
-    // { "text": "i18n" },
-    // { "text": "Vue-i18n" },
-    // { "text": "Server Side Rendering" },
-    // { "text": "Nuxt.js" }
+    { "text": "Vue" },
+    { "text": "범용 개발 스킬" ,
+      "nodes": [ { "text": "Git" },
+        { "text": "HTTP / HTTPS" },
+        { "text": "문제 해결을 위한 검색 방법 배우기" },
+        { "text": "터미널 사용법" },
+        { "text": "데이터 구조, 알고리즘" },
+        { "text": "디자인 패턴" },
+      ]
+    },
+    { "text": "빌드 도구" },
+    { "text": "패키지 매니저",
+      "nodes": [
+        { "text": "npm" },
+        { "text": "yarn" },
+        { "text": "pnpm" }
+      ]},
+    { "text": "태스크 러너" ,
+      "nodes": [
+        { "text": "npm 스크립트" }
+      ]},
+    { "text": "스타일링" },
+    { "text": "CSS 전처리",
+      "nodes": [
+        { "text": "Sass / SCSS" },
+        { "text": "PostCSS" }
+      ]},
+    { "text": "CSS 프레임워크",
+      "nodes": [
+        {"text":"Tailwind"}
+      ]},
+    { "text": "CSS in JS",
+      "nodes": [
+        {"text":"Single File Components"}
+      ]},
+    { "text": "상태 관리" },
+    { "text": "Component State" },
+    { "text": "Vuex"},
+    { "text": "Vuex-loading" },
+    { "text": "Vuex-shared-mutations" },
+    { "text": "Data 영속화",
+      "nodes": [
+        { "text": "vuex-persist" },
+        { "text": "vuex-persistedstate" },
+      ]},
+    { "text": "타입 검사기",
+      "nodes": [
+        { "text": "Prop Types" },
+        { "text": "TypeScript" }
+      ]},
+    { "text": "Routing",
+      "nodes": [
+        { "text": "vue-router" }
+      ]},
+    { "text": "API 클라이언트" },
+    { "text": "REST",
+      "nodes": [
+        { "text": "fetch (네이티브)" },
+        { "text": "axios" }
+      ]},
+    { "text": "GraphQL",
+      "nodes": [
+        { "text": "Apollo" }
+      ]},
+    { "text": "유틸리티 라이브러리",
+      "nodes": [
+        { "text": "Lodash" },
+        { "text": "Moment" }
+      ]},
+    { "text": "테스트" },
+    { "text": "Jest" },
+    { "text": "Vue Test Utils" },
+    { "text": "Karma" },
+    { "text": "E2E 테스트",
+      "nodes": [
+        { "text": "Selenium" },
+        { "text": "Cypress" },
+        { "text": "Puppeteer" },
+        { "text": "Cucumber.js" },
+      ]},
+    { "text": "i18n",
+      "nodes": [
+        { "text": "Vue-i18n" }
+      ]},
+    { "text": "Server Side Rendering",
+      "nodes": [
+        { "text": "Nuxt.js" }
+      ]},
+    { "text": "데스크탑 앱 만들기",
+      "nodes": [
+        { "text": "Electron" }
+      ]}
   ],
   connections: [
     {
@@ -129,7 +143,119 @@ const data = {
     {
       "source": "웹 기초",
       "target": "범용 개발 스킬"
-    }
+    },
+    {
+      "source": "웹 기초",
+      "target": "Vue"
+    },
+    {
+      "source": "Vue",
+      "target": "빌드 도구"
+    },
+    {
+      "source": "Vue",
+      "target": "스타일링"
+    },
+    {
+      "source": "Vue",
+      "target": "상태 관리"
+    },
+    {
+      "source": "Vue",
+      "target": "타입 검사기"
+    },
+    {
+      "source": "Vue",
+      "target": "Routing"
+    },
+    {
+      "source": "Vue",
+      "target": "API 클라이언트"
+    },
+    {
+      "source": "Vue",
+      "target": "유틸리티 라이브러리"
+    },
+    {
+      "source": "Vue",
+      "target": "테스트"
+    },
+    {
+      "source": "Vue",
+      "target": "i18n"
+    },
+    {
+      "source": "Vue",
+      "target": "데스크탑 앱 만들기"
+    },
+    {
+      "source": "빌드 도구",
+      "target": "패키지 매니저"
+    },
+    {
+      "source": "빌드 도구",
+      "target": "태스크 러너"
+    },
+    {
+      "source": "스타일링",
+      "target": "CSS 전처리"
+    },
+    {
+      "source": "스타일링",
+      "target": "CSS 프레임워크"
+    },
+    {
+      "source": "스타일링",
+      "target": "CSS in JS"
+    },
+    {
+      "source": "상태 관리",
+      "target": "Component State"
+    },
+    {
+      "source": "상태 관리",
+      "target": "Vuex"
+    },
+    {
+      "source": "Vuex",
+      "target": "Vuex-loading"
+    },
+    {
+      "source": "Vuex",
+      "target": "Vuex-shared-mutations"
+    },
+    {
+      "source": "Vuex",
+      "target": "Data 영속화"
+    },
+    {
+      "source": "테스트",
+      "target": "Jest"
+    },
+    {
+      "source": "테스트",
+      "target": "Vue Test Utils"
+    },
+    {
+      "source": "테스트",
+      "target": "Karma"
+    },
+    {
+      "source": "테스트",
+      "target": "E2E 테스트"
+    },
+    {
+      "source": "API 클라이언트",
+      "target": "REST"
+    },
+    {
+      "source": "API 클라이언트",
+      "target": "GraphQL"
+    },
+    {
+      "source": "Vue",
+      "target": "Server Side Rendering"
+    },
   ],
 };
 
