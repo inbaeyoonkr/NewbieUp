@@ -4,11 +4,10 @@
       <div id="splitlayout" class="splitlayout">
         <div class="intro">
           <div class="side side-left">
-            <header class="codropsheader clearfix">
-            </header>
+            <header class="codropsheader clearfix"></header>
             <div class="intro-content">
               <div class="profile">
-                <img src="/static/images/frontend.png" alt="frontend">
+                <img src="/static/images/frontend.png" alt="frontend" />
               </div>
               <h1>
                 <span>프론트엔드</span>
@@ -20,7 +19,7 @@
           <div class="side side-right">
             <div class="intro-content">
               <div class="profile">
-                <img src="/static/images/backend.png" alt="backend">
+                <img src="/static/images/backend.png" alt="backend" />
               </div>
               <h1>
                 <span>백엔드</span>
@@ -88,44 +87,40 @@
 </template>
 
 <script>
+export default {
+  name: "main_page",
+  created() {
+    let demo = document.createElement("link");
+    demo.setAttribute("type", "text/css");
+    demo.setAttribute("rel", "stylesheet");
+    demo.setAttribute("href", "/static/css/demo.css");
 
-  export default {
-      name: "main_page",
-      created() {
+    document.head.appendChild(demo);
 
-          let demo = document.createElement('link');
-          demo.setAttribute('type', "text/css");
-          demo.setAttribute('rel', "stylesheet");
-          demo.setAttribute('href', "/static/css/demo.css");
+    let component = document.createElement("link");
+    component.setAttribute("type", "text/css");
+    component.setAttribute("rel", "stylesheet");
+    component.setAttribute("href", "/static/css/component.css");
 
-          document.head.appendChild(demo);
+    document.head.appendChild(component);
 
-          let component = document.createElement('link');
-          component.setAttribute('type', "text/css");
-          component.setAttribute('rel', "stylesheet");
-          component.setAttribute('href', "/static/css/component.css");
+    let modernizr = document.createElement("script");
+    modernizr.setAttribute("src", "/static/js/modernizr.custom.js");
 
-          document.head.appendChild(component);
+    document.head.appendChild(modernizr);
+  },
+  mounted() {
+    let classie = document.createElement("script");
+    classie.setAttribute("src", "/static/js/classie.js");
 
-          let modernizr = document.createElement('script');
-          modernizr.setAttribute('src', "/static/js/modernizr.custom.js");
+    document.head.appendChild(classie);
 
-          document.head.appendChild(modernizr);
-      },
-      mounted() {
+    let splitLayout = document.createElement("script");
+    splitLayout.setAttribute("src", "/static/js/cbpSplitLayout.js");
 
-          let classie = document.createElement('script');
-          classie.setAttribute('src', "/static/js/classie.js");
-
-          document.head.appendChild(classie);
-
-          let splitLayout = document.createElement('script');
-          splitLayout.setAttribute('src', "/static/js/cbpSplitLayout.js");
-
-          document.head.appendChild(splitLayout);
-      }
-  };
-
+    document.head.appendChild(splitLayout);
+  }
+};
 </script>
 
 <style scoped>

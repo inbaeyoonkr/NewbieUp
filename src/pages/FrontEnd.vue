@@ -1,45 +1,31 @@
 <template>
-    <div class="wrapper">
-      <div class="title">프론트엔드 로드맵</div>
-      <div class="balls">
+  <div class="wrapper">
+    <div class="title">프론트엔드 로드맵</div>
+    <div class="balls">
+      <router-link to="/">
         <div>👨‍💻</div>
-        <div>👨‍💻</div>
-        <div>👨‍💻</div>
-      </div>
-      <div class="logo">뉴비업</div>
-      <div class="lode_map">
-        
-       <mindmap :nodes="nodes" :connections="connections" :editable="false" />
-      </div>
-      <!--메뉴-->
-      <transition name="slide">
-        <div v-if="isShowMenu" id="nav" class="nav">
-          <button @click="isShowMenu = false" class="close_btn"></button>
-          <div class="nav_content">
-            자바스크립트란?
-            <p>자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. <br>이 언어는 웹 브라우저 내에서 주로 사용하며, <br>다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.</p>
-            <div>책 추천</div>
-            <div>코딩 컨벤션</div>
-            <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
-            <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵 보기</button>
-          </div>
-        </div>
-      </transition>
+      </router-link>
     </div>
-
+    <div class="lode_map">
+      <mindmap :nodes="nodes" :connections="connections" :editable="false" />
+    </div>
     <!--메뉴-->
     <transition name="slide">
       <div v-if="isShowMenu" id="nav" class="nav">
         <button @click="isShowMenu = false" class="close_btn"></button>
         <div class="nav_content">
-          자바스크립트란?
-          <p>
-            자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.
-            <br />이 언어는 웹 브라우저 내에서 주로 사용하며,
-            <br />다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.
-          </p>
-          <div>책 추천</div>
-          <div>코딩 컨벤션</div>
+          <h1>{{nodeData.title}}란...</h1>
+          <p>{{nodeData.explanation}}</p>
+          <div>
+            <h2>책 추천</h2>
+            <div v-for="book in nodeData.book" :key="book.index">
+              <div>{{book.title}}</div>
+              <img v-bind:src="book.link" />
+            </div>
+          </div>
+          <div>
+            <h2>코딩 컨벤션</h2>
+          </div>
           <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
           <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵 보기</button>
         </div>
@@ -49,26 +35,25 @@
 </template>
 
 <script>
-    import data from '../data/frontend.js';
-    const { nodes, connections } = data;
+import data from "../data/frontend.js";
+import dictionary from "../data/dictionary.js";
 
-    export default {
-      name: "FrontEnd",
-      data() {
-          return {
-            nodes,
-            connections,
-            isShowMenu: false,
-          }
-      },
-      methods: {
-        clickNode: function(){
-          this.isShowMenu = true;
-        },
-        goLoadMapPage: function(){
-          this.$router.push('/vue');
-        }
-      }
+const { nodes, connections } = data;
+
+export default {
+  name: "FrontEnd",
+  created() {
+    let demo = document.createElement("link");
+    demo.setAttribute("type", "text/css");
+    demo.setAttribute("rel", "stylesheet");
+    demo.setAttribute("href", "/static/css/demo.css");
+
+    document.head.appendChild(demo);
+
+    let component = document.createElement("link");
+    component.setAttribute("type", "text/css");
+    component.setAttribute("rel", "stylesheet");
+    component.setAttribute("href", "/static/css/component.css");
 
     document.head.appendChild(component);
 
@@ -77,15 +62,34 @@
 
     document.head.appendChild(modernizr);
   },
+  mounted() {
+    let obj = document.getElementsByClassName("mindmap-node");
+    //console.log(obj);
+    for (let i = 0; i < obj.length; i++) {
+      //let key = obj[i].getElementsByTagName("a")[0].innerText;
+      //console.log(obj[i].getElementsByTagName("a")[0].innerText);
+      const thisObject = this;
+      obj[i].addEventListener("click", () => {
+        let key = obj[i].getElementsByTagName("a")[0].innerText;
+
+        if (!dictionary[key.trim()]) {
+          // TODO : 준비된 정보가 없음
+          return;
+        }
+        thisObject.isShowMenu = true;
+        thisObject.nodeData = dictionary[key.trim()];
+      });
+    }
+  },
   data() {
     return {
-      isShowMenu: false
+      nodes,
+      connections,
+      isShowMenu: false,
+      nodeData: null
     };
   },
   methods: {
-    clickNode: function() {
-      this.isShowMenu = true;
-    },
     goLoadMapPage: function() {
       this.$router.push("/vue");
     }
@@ -121,11 +125,12 @@
   color: black;
 }
 .title {
-  padding-left: 26rem;
-  padding-top: 1rem;
   font-size: 36px;
   font-weight: bold;
   letter-spacing: 0.5rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
 }
 .balls {
   margin-left: 4rem;
@@ -195,16 +200,14 @@
   cursor: pointer;
 }
 .load_map_btn {
-  bottom: 40px;
-  left: 10px;
-  position: absolute;
 }
 
 .nav {
+  overflow: auto;
   position: absolute;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 400px;
   height: 100%;
   color: #fff;
   background: #000000;
