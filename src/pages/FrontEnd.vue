@@ -27,7 +27,7 @@
             <h2>코딩 컨벤션</h2>
           </div>
           <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
-          <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵보기</button>
+          <button v-if="true" class="roadmap_btn" @click="goLoadMapPage">로드맵보기</button>
         </div>
       </div>
     </transition>
@@ -199,7 +199,42 @@ export default {
   margin: 30px;
   cursor: pointer;
 }
-.load_map_btn {
+
+.roadmap_btn {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: white;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  background-color: hsl(236, 32%, 26%);
+  width: 100%;
+  height: 50px;
+}
+
+.roadmap_btn::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fc2f70;
+  transform-origin: center right;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+
+.roadmap_btn:hover {
+  cursor: pointer;
+}
+
+.roadmap_btn:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
 }
 
 .nav {
