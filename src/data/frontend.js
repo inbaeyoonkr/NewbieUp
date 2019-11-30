@@ -3,10 +3,10 @@ const data = {
     { "text": "프론트 엔드" },
     { "text": "테스트" },
     { "text": "Vue",
-        url: "#"
+      url: "/#/roadmap?type=vue"
     },
     { "text": "React",
-        url: "#"
+        url: "/#/roadmap?type=react"
     },
     { "text": "Bootstrap" },
     { "text": "Angular" },
