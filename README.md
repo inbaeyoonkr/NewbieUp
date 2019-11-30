@@ -1,21 +1,5 @@
-# newbie_up
+# NewbieUp
+데벨업 해커톤에서 진행한 프로젝트.
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+### 서비스 설명
+초보개발자들을 위해 개발 컨벤션, 기술 로드맵과 같은 정보들을 제공한다.
