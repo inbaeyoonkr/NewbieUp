@@ -1,25 +1,37 @@
 <template>
   <div>
-    <div class="test">로드맵을 보여줄 페이지 입니다!!</div>
     <mindmap :nodes="nodes" :connections="connections" :editable="false" />
   </div>
 </template>
 
 <script>
-// import data from "../data/react.js";
 
-import data from "../data/vue.js";
-const { nodes, connections } = data;
+  import data from '../data/integrated_data.js';
 
-export default {
-  name: "roadmap_page",
-  data() {
-    return {
-      nodes,
-      connections
-    };
-  }
-};
+  export default {
+    name: "roadmap_page",
+
+      beforeCreate() {
+
+        const type = this.$route.query.type;
+
+        if (!data[type]) {
+            alert("아직 준비중입니다 :)");
+            window.history.back();
+        }
+
+        const { nodes, connections } = data[type];
+
+        this.nodes = nodes;
+        this.connections = connections;
+      },
+
+      data() {
+        return {
+        };
+      }
+    }
+
 </script>
 
 <style scoped>
