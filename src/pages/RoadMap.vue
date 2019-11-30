@@ -8,17 +8,20 @@
 <script>
 import data from "../data/react.js";
 
-const { nodes, connections } = data;
-console.log(data);
-export default {
-  name: "roadmap_page",
-  data() {
-    return {
-      nodes,
-      connections
-    };
-  }
-};
+
+  import data from '../data/vue.js';
+  const { nodes, connections } = data;
+
+  export default {
+    name: "roadmap_page",
+      data() {
+        return {
+          nodes,
+          connections
+        };
+      }
+    }
+
 </script>
 
 <style scoped>
