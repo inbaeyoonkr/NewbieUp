@@ -8,9 +8,9 @@
       </div>
       <div class="logo">뉴비업</div>
       <div class="lode_map">
-        <button @click="clickNode">javascript</button>
+        
+       <mindmap :nodes="nodes" :connections="connections" :editable="false" />
       </div>
-
       <!--메뉴-->
       <transition name="slide">
         <div v-if="isShowMenu" id="nav" class="nav">
@@ -29,10 +29,15 @@
 </template>
 
 <script>
+    import data from '../data/frontend.js';
+    const { nodes, connections } = data;
+
     export default {
       name: "FrontEnd",
       data() {
           return {
+            nodes,
+            connections,
             isShowMenu: false,
           }
       },
