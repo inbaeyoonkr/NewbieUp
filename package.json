@@ -5,7 +5,7 @@
   "author": "haeeun <hegfs6327@naver.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "PORT=3000 HOST=0.0.0.0 webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
