@@ -11,30 +11,17 @@
 
 <script>
 
-    export default {
-        name: "roadmap_page",
-        data() {
-          return {
-            nodes: [
-              {
-                "text": "hello",
-                "url": "https://www.naver.com",
-                "category": "react"
-              },
-              {
-                "text": "world",
-                "url": "https://www.naver.com",
-                "category": "react"
-              }
-            ],
-            connections: [
-              {
-                "source": "hello",
-                "target": "world"
-              }
-            ],
-          };
-        }
+  import data from '../data/vue.js';
+  const { nodes, connections } = data;
+
+  export default {
+    name: "roadmap_page",
+      data() {
+        return {
+          nodes,
+          connections
+        };
+      }
     }
 </script>
 
