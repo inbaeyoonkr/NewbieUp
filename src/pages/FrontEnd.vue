@@ -27,7 +27,7 @@
             <h2>코딩 컨벤션</h2>
           </div>
           <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
-          <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵 보기</button>
+          <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵보기</button>
         </div>
       </div>
     </transition>
@@ -91,7 +91,7 @@ export default {
   },
   methods: {
     goLoadMapPage: function() {
-      this.$router.push("/vue");
+      this.$router.push(this.nodeData.link);
     }
   }
 };

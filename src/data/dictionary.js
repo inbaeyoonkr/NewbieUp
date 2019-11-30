@@ -135,7 +135,8 @@ const dictionary = {
         title: "Airbnb가 리액트를 다루는 예시",
         link: "https://github.com/airbnb/javascript/tree/master/react"
       }
-    ]
+    ],
+    link: "/roadmap?type=react"
   },
   Angular: {
     title: "Angular",
@@ -177,7 +178,8 @@ const dictionary = {
         title: null,
         link: null
       }
-    ]
+    ],
+    link: "/roadmap?type=vue"
   }
 };
 

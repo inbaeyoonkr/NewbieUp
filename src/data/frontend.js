@@ -2,8 +2,8 @@ const data = {
   nodes: [
     { text: "프론트 엔드" },
     { text: "테스트" },
-    { text: "Vue", url: "/#/roadmap?type=vue" },
-    { text: "React", url: "/#/roadmap?type=react" },
+    { text: "Vue" },
+    { text: "React" },
     { text: "Bootstrap" },
     { text: "Angular" },
     { text: "기본" }
