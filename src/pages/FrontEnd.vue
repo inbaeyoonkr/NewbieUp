@@ -1,18 +1,30 @@
 <template>
-  <div class="wrapper">
-    <div class="header">
-      <div class="logo-area">
-        <div class="balls">
-          <router-link to="/" class="logo">
-            <div>👨‍💻</div>
-          </router-link>
-        </div>
+    <div class="wrapper">
+      <div class="title">프론트엔드 로드맵</div>
+      <div class="balls">
+        <div>👨‍💻</div>
+        <div>👨‍💻</div>
+        <div>👨‍💻</div>
       </div>
-      <div class="title">프론트엔드</div>
-    </div>
-
-    <div class="roadmap_container">
-      <button @click="clickNode">javascript</button>
+      <div class="logo">뉴비업</div>
+      <div class="lode_map">
+        
+       <mindmap :nodes="nodes" :connections="connections" :editable="false" />
+      </div>
+      <!--메뉴-->
+      <transition name="slide">
+        <div v-if="isShowMenu" id="nav" class="nav">
+          <button @click="isShowMenu = false" class="close_btn"></button>
+          <div class="nav_content">
+            자바스크립트란?
+            <p>자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다. <br>이 언어는 웹 브라우저 내에서 주로 사용하며, <br>다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다.</p>
+            <div>책 추천</div>
+            <div>코딩 컨벤션</div>
+            <!--TODO: vue나 리액트인경우 로드맵 보기 버튼 보이기-->
+            <button v-if="true" class="load_map_btn" @click="goLoadMapPage">로드맵 보기</button>
+          </div>
+        </div>
+      </transition>
     </div>
 
     <!--메뉴-->
@@ -37,20 +49,26 @@
 </template>
 
 <script>
-export default {
-  name: "FrontEnd",
-  created() {
-    let demo = document.createElement("link");
-    demo.setAttribute("type", "text/css");
-    demo.setAttribute("rel", "stylesheet");
-    demo.setAttribute("href", "/static/css/demo.css");
+    import data from '../data/frontend.js';
+    const { nodes, connections } = data;
 
-    document.head.appendChild(demo);
-
-    let component = document.createElement("link");
-    component.setAttribute("type", "text/css");
-    component.setAttribute("rel", "stylesheet");
-    component.setAttribute("href", "/static/css/component.css");
+    export default {
+      name: "FrontEnd",
+      data() {
+          return {
+            nodes,
+            connections,
+            isShowMenu: false,
+          }
+      },
+      methods: {
+        clickNode: function(){
+          this.isShowMenu = true;
+        },
+        goLoadMapPage: function(){
+          this.$router.push('/vue');
+        }
+      }
 
     document.head.appendChild(component);
 
