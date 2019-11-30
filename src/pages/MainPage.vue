@@ -129,49 +129,6 @@
 </script>
 
 <style scoped>
-.wrapper {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-.balls {
-  width: 20rem;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 250px;
-}
-
-.balls div {
-  font-size: 3.5rem;
-  width: 0.8em;
-  height: 0.8em;
-  border-radius: 50%;
-  transform: translateY(-100%);
-  animation: wave 0.8s ease-in-out alternate infinite;
-}
-
-.balls div:nth-of-type(1) {
-  animation-delay: -0.4s;
-}
-
-.balls div:nth-of-type(2) {
-  animation-delay: -0.2s;
-}
-
-@keyframes wave {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(100%);
-  }
-}
-
 .buttons-wrapper {
   display: flex;
   flex-direction: row;
