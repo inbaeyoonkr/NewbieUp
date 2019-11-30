@@ -1,6 +1,9 @@
 <template>
   <div>
-    <mindmap :nodes="nodes" :connections="connections" :editable="false" />
+    <router-link to="/" class="home">홈</router-link>
+    <div>
+      <mindmap :nodes="nodes" :connections="connections" :editable="false" />
+    </div>
   </div>
 </template>
 
@@ -31,4 +34,11 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  position: absolute;
+  font-size: 2rem;
+  width: 5rem;
+  top: 30px;
+  left: 100px;
+}
 </style>
