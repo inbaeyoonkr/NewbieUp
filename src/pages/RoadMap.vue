@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import data from "../data/react.js";
 
+    // import data from "../data/react.js";
 
   import data from '../data/vue.js';
   const { nodes, connections } = data;
